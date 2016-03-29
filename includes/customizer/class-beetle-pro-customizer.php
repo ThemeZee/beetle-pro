@@ -4,7 +4,7 @@
  *
  * Setup the Customizer and theme options for the Pro plugin
  *
- * @package Tortuga Pro
+ * @package Beetle Pro
  */
 
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Tortuga_Pro_Customizer' ) ) :
+if ( ! class_exists( 'Beetle_Pro_Customizer' ) ) :
 
-class Tortuga_Pro_Customizer {
+class Beetle_Pro_Customizer {
 
 	/**
 	 * Customizer Setup
@@ -23,8 +23,8 @@ class Tortuga_Pro_Customizer {
 	*/
 	static function setup() {
 		
-		// Return early if Tortuga Theme is not active
-		if ( ! current_theme_supports( 'tortuga-pro'  ) ) {
+		// Return early if Beetle Theme is not active
+		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
 			return;
 		}
 		
@@ -33,7 +33,7 @@ class Tortuga_Pro_Customizer {
 		add_action( 'customize_controls_print_styles', array( __CLASS__, 'customize_preview_css' ) );
 		
 		// Remove Upgrade section
-		remove_action( 'customize_register', 'tortuga_customize_register_upgrade_settings' );
+		remove_action( 'customize_register', 'beetle_customize_register_upgrade_settings' );
 	}
 	
 	/**
@@ -47,7 +47,7 @@ class Tortuga_Pro_Customizer {
 		$theme_options = wp_parse_args( 
 			
 			// Get saved theme options from WP database
-			get_option( 'tortuga_theme_options', array() ), 
+			get_option( 'beetle_theme_options', array() ), 
 			
 			// Merge with Default Options if setting was not saved yet
 			self::get_default_options() 
@@ -100,7 +100,7 @@ class Tortuga_Pro_Customizer {
 	 */
 	static function customize_preview_js() {
 		
-		wp_enqueue_script( 'tortuga-pro-customizer-js', TORTUGA_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), TORTUGA_PRO_VERSION, true );
+		wp_enqueue_script( 'beetle-pro-customizer-js', BEETLE_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), BEETLE_PRO_VERSION, true );
 	
 	}
 
@@ -111,13 +111,13 @@ class Tortuga_Pro_Customizer {
 	 */
 	static function customize_preview_css() {
 		
-		wp_enqueue_style( 'tortuga-pro-customizer-css', TORTUGA_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), TORTUGA_PRO_VERSION );
+		wp_enqueue_style( 'beetle-pro-customizer-css', BEETLE_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), BEETLE_PRO_VERSION );
 	
 	}
 
 }
 
 // Run Class
-add_action( 'init', array( 'Tortuga_Pro_Customizer', 'setup' ) );
+add_action( 'init', array( 'Beetle_Pro_Customizer', 'setup' ) );
 
 endif;

@@ -5,16 +5,16 @@
  * Displays credit link and footer text based on theme options
  * Registers and displays footer navigation
  *
- * @package Tortuga Pro
+ * @package Beetle Pro
  */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Tortuga_Pro_Footer_Line' ) ) :
+if ( ! class_exists( 'Beetle_Pro_Footer_Line' ) ) :
 
-class Tortuga_Pro_Footer_Line {
+class Beetle_Pro_Footer_Line {
 
 	/**
 	 * Footer Line Setup
@@ -23,20 +23,20 @@ class Tortuga_Pro_Footer_Line {
 	*/
 	static function setup() {
 		
-		// Return early if Tortuga Theme is not active
-		if ( ! current_theme_supports( 'tortuga-pro'  ) ) {
+		// Return early if Beetle Theme is not active
+		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
 			return;
 		}
 		
 		// Remove default footer text function and replace it with new one
-		remove_action( 'tortuga_footer_text', 'tortuga_footer_text' );
-		add_action( 'tortuga_footer_text', array( __CLASS__, 'footer_text' ) );
+		remove_action( 'beetle_footer_text', 'beetle_footer_text' );
+		add_action( 'beetle_footer_text', array( __CLASS__, 'footer_text' ) );
 		
 		// Add Footer Settings in Customizer
 		add_action( 'customize_register', array( __CLASS__, 'footer_settings' ) );
 		
 		// Display footer navigation
-		add_action( 'tortuga_footer_menu', array( __CLASS__, 'display_footer_menu' ) );
+		add_action( 'beetle_footer_menu', array( __CLASS__, 'display_footer_menu' ) );
 		
 	}
 	
@@ -48,7 +48,7 @@ class Tortuga_Pro_Footer_Line {
 	static function footer_text() { 
 
 		// Get Theme Options from Database
-		$theme_options = Tortuga_Pro_Customizer::get_theme_options();
+		$theme_options = Beetle_Pro_Customizer::get_theme_options();
 		
 		// Display Footer Text
 		if ( $theme_options['footer_text'] <> '' ) :
@@ -60,9 +60,9 @@ class Tortuga_Pro_Footer_Line {
 		// Call Credit Link function of theme if credit link is activated
 		if ( true == $theme_options['credit_link'] ) :
 		
-			if ( function_exists( 'tortuga_footer_text' ) ) :
+			if ( function_exists( 'beetle_footer_text' ) ) :
 			
-				tortuga_footer_text();
+				beetle_footer_text();
 				
 			endif;
 			
@@ -100,42 +100,42 @@ class Tortuga_Pro_Footer_Line {
 	static function footer_settings( $wp_customize ) {
 
 		// Add Sections for Footer Settings
-		$wp_customize->add_section( 'tortuga_pro_section_footer', array(
-			'title'    => __( 'Footer Settings', 'tortuga-pro' ),
+		$wp_customize->add_section( 'beetle_pro_section_footer', array(
+			'title'    => __( 'Footer Settings', 'beetle-pro' ),
 			'priority' => 90,
-			'panel' => 'tortuga_options_panel' 
+			'panel' => 'beetle_options_panel' 
 			)
 		);
 		
 		// Add Footer Text setting
-		$wp_customize->add_setting( 'tortuga_theme_options[footer_text]', array(
+		$wp_customize->add_setting( 'beetle_theme_options[footer_text]', array(
 			'default'           => '',
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => array( __CLASS__, 'sanitize_footer_text' )
 			)
 		);
-		$wp_customize->add_control( 'tortuga_theme_options[footer_text]', array(
-			'label'    => __( 'Footer Text', 'tortuga-pro' ),
-			'section'  => 'tortuga_pro_section_footer',
-			'settings' => 'tortuga_theme_options[footer_text]',
+		$wp_customize->add_control( 'beetle_theme_options[footer_text]', array(
+			'label'    => __( 'Footer Text', 'beetle-pro' ),
+			'section'  => 'beetle_pro_section_footer',
+			'settings' => 'beetle_theme_options[footer_text]',
 			'type'     => 'textarea',
 			'priority' => 1
 			)
 		);
 		
 		// Add Credit Link setting
-		$wp_customize->add_setting( 'tortuga_theme_options[credit_link]', array(
+		$wp_customize->add_setting( 'beetle_theme_options[credit_link]', array(
 			'default'           => true,
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
-			'sanitize_callback' => 'tortuga_sanitize_checkbox'
+			'sanitize_callback' => 'beetle_sanitize_checkbox'
 			)
 		);
-		$wp_customize->add_control( 'tortuga_theme_options[credit_link]', array(
-			'label'    => __( 'Display Credit Link to ThemeZee on footer line', 'tortuga-pro' ),
-			'section'  => 'tortuga_pro_section_footer',
-			'settings' => 'tortuga_theme_options[credit_link]',
+		$wp_customize->add_control( 'beetle_theme_options[credit_link]', array(
+			'label'    => __( 'Display Credit Link to ThemeZee on footer line', 'beetle-pro' ),
+			'section'  => 'beetle_pro_section_footer',
+			'settings' => 'beetle_theme_options[credit_link]',
 			'type'     => 'checkbox',
 			'priority' => 2
 			)
@@ -165,21 +165,21 @@ class Tortuga_Pro_Footer_Line {
 	*/
 	static function register_footer_menu() {
 	
-		// Return early if Tortuga Theme is not active
-		if ( ! current_theme_supports( 'tortuga-pro'  ) ) {
+		// Return early if Beetle Theme is not active
+		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
 			return;
 		}
 		
-		register_nav_menu( 'footer', esc_html__( 'Footer Navigation', 'tortuga-pro' ) );
+		register_nav_menu( 'footer', esc_html__( 'Footer Navigation', 'beetle-pro' ) );
 		
 	}
 
 }
 
 // Run Class
-add_action( 'init', array( 'Tortuga_Pro_Footer_Line', 'setup' ) );
+add_action( 'init', array( 'Beetle_Pro_Footer_Line', 'setup' ) );
 
 // Register footer navigation in backend
-add_action( 'after_setup_theme', array( 'Tortuga_Pro_Footer_Line', 'register_footer_menu' ), 20 );
+add_action( 'after_setup_theme', array( 'Beetle_Pro_Footer_Line', 'register_footer_menu' ), 20 );
 
 endif;

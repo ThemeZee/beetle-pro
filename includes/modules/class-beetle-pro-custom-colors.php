@@ -4,7 +4,7 @@
  *
  * Adds color settings to Customizer and generates color CSS code
  *
- * @package Tortuga Pro
+ * @package Beetle Pro
  */
 
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Tortuga_Pro_Custom_Colors' ) ) :
+if ( ! class_exists( 'Beetle_Pro_Custom_Colors' ) ) :
 
-class Tortuga_Pro_Custom_Colors {
+class Beetle_Pro_Custom_Colors {
 
 	/**
 	 * Custom Colors Setup
@@ -23,13 +23,13 @@ class Tortuga_Pro_Custom_Colors {
 	*/
 	static function setup() {
 		
-		// Return early if Tortuga Theme is not active
-		if ( ! current_theme_supports( 'tortuga-pro'  ) ) {
+		// Return early if Beetle Theme is not active
+		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
 			return;
 		}
 		
 		// Add Custom Color CSS code to custom stylesheet output
-		add_filter( 'tortuga_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) ); 
+		add_filter( 'beetle_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) ); 
 		
 		// Add Custom Color Settings
 		add_action( 'customize_register', array( __CLASS__, 'color_settings' ) );
@@ -43,10 +43,10 @@ class Tortuga_Pro_Custom_Colors {
 	static function custom_colors_css( $custom_css ) { 
 		
 		// Get Theme Options from Database
-		$theme_options = Tortuga_Pro_Customizer::get_theme_options();
+		$theme_options = Beetle_Pro_Customizer::get_theme_options();
 		
 		// Get Default Fonts from settings
-		$default_options = Tortuga_Pro_Customizer::get_default_options();
+		$default_options = Beetle_Pro_Customizer::get_default_options();
 
 		// Set Color CSS Variable
 		$color_css = '';
@@ -311,18 +311,18 @@ class Tortuga_Pro_Custom_Colors {
 	static function color_settings( $wp_customize ) {
 
 		// Add Section for Theme Colors
-		$wp_customize->add_section( 'tortuga_pro_section_colors', array(
-			'title'    => __( 'Theme Colors', 'tortuga-pro' ),
+		$wp_customize->add_section( 'beetle_pro_section_colors', array(
+			'title'    => __( 'Theme Colors', 'beetle-pro' ),
 			'priority' => 60,
-			'panel' => 'tortuga_options_panel' 
+			'panel' => 'beetle_options_panel' 
 			)
 		);
 		
 		// Get Default Colors from settings
-		$default_options = Tortuga_Pro_Customizer::get_default_options();
+		$default_options = Beetle_Pro_Customizer::get_default_options();
 		
 		// Add Top Navigation Color setting
-		$wp_customize->add_setting( 'tortuga_theme_options[top_navi_color]', array(
+		$wp_customize->add_setting( 'beetle_theme_options[top_navi_color]', array(
 			'default'           => $default_options['top_navi_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -330,16 +330,16 @@ class Tortuga_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'tortuga_theme_options[top_navi_color]', array(
-				'label'      => _x( 'Top Navigation', 'color setting', 'tortuga-pro' ),
-				'section'    => 'tortuga_pro_section_colors',
-				'settings'   => 'tortuga_theme_options[top_navi_color]',
+			$wp_customize, 'beetle_theme_options[top_navi_color]', array(
+				'label'      => _x( 'Top Navigation', 'color setting', 'beetle-pro' ),
+				'section'    => 'beetle_pro_section_colors',
+				'settings'   => 'beetle_theme_options[top_navi_color]',
 				'priority' => 1
 			) ) 
 		);
 		
 		// Add Navigation Primary Color setting
-		$wp_customize->add_setting( 'tortuga_theme_options[header_color]', array(
+		$wp_customize->add_setting( 'beetle_theme_options[header_color]', array(
 			'default'           => $default_options['header_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -347,16 +347,16 @@ class Tortuga_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'tortuga_theme_options[header_color]', array(
-				'label'      => _x( 'Header', 'color setting', 'tortuga-pro' ),
-				'section'    => 'tortuga_pro_section_colors',
-				'settings'   => 'tortuga_theme_options[header_color]',
+			$wp_customize, 'beetle_theme_options[header_color]', array(
+				'label'      => _x( 'Header', 'color setting', 'beetle-pro' ),
+				'section'    => 'beetle_pro_section_colors',
+				'settings'   => 'beetle_theme_options[header_color]',
 				'priority' => 2
 			) ) 
 		);
 		
 		// Add Navigation Secondary Color setting
-		$wp_customize->add_setting( 'tortuga_theme_options[navi_color]', array(
+		$wp_customize->add_setting( 'beetle_theme_options[navi_color]', array(
 			'default'           => $default_options['navi_color'],
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
@@ -364,16 +364,16 @@ class Tortuga_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'tortuga_theme_options[navi_color]', array(
-				'label'      => _x( 'Navigation', 'color setting', 'tortuga-pro' ),
-				'section'    => 'tortuga_pro_section_colors',
-				'settings'   => 'tortuga_theme_options[navi_color]',
+			$wp_customize, 'beetle_theme_options[navi_color]', array(
+				'label'      => _x( 'Navigation', 'color setting', 'beetle-pro' ),
+				'section'    => 'beetle_pro_section_colors',
+				'settings'   => 'beetle_theme_options[navi_color]',
 				'priority' => 3
 			) ) 
 		);
 		
 		// Add Post Primary Color setting
-		$wp_customize->add_setting( 'tortuga_theme_options[title_color]', array(
+		$wp_customize->add_setting( 'beetle_theme_options[title_color]', array(
 			'default'           => $default_options['title_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -381,16 +381,16 @@ class Tortuga_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'tortuga_theme_options[title_color]', array(
-				'label'      => _x( 'Post Titles', 'color setting', 'tortuga-pro' ),
-				'section'    => 'tortuga_pro_section_colors',
-				'settings'   => 'tortuga_theme_options[title_color]',
+			$wp_customize, 'beetle_theme_options[title_color]', array(
+				'label'      => _x( 'Post Titles', 'color setting', 'beetle-pro' ),
+				'section'    => 'beetle_pro_section_colors',
+				'settings'   => 'beetle_theme_options[title_color]',
 				'priority' => 4
 			) ) 
 		);
 		
 		// Add Link and Button Color setting
-		$wp_customize->add_setting( 'tortuga_theme_options[link_color]', array(
+		$wp_customize->add_setting( 'beetle_theme_options[link_color]', array(
 			'default'           => $default_options['link_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -398,16 +398,16 @@ class Tortuga_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'tortuga_theme_options[link_color]', array(
-				'label'      => _x( 'Links and Buttons', 'color setting', 'tortuga-pro' ),
-				'section'    => 'tortuga_pro_section_colors',
-				'settings'   => 'tortuga_theme_options[link_color]',
+			$wp_customize, 'beetle_theme_options[link_color]', array(
+				'label'      => _x( 'Links and Buttons', 'color setting', 'beetle-pro' ),
+				'section'    => 'beetle_pro_section_colors',
+				'settings'   => 'beetle_theme_options[link_color]',
 				'priority' => 5
 			) ) 
 		);
 		
 		// Add Widget Title Color setting
-		$wp_customize->add_setting( 'tortuga_theme_options[widget_title_color]', array(
+		$wp_customize->add_setting( 'beetle_theme_options[widget_title_color]', array(
 			'default'           => $default_options['widget_title_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -415,16 +415,16 @@ class Tortuga_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'tortuga_theme_options[widget_title_color]', array(
-				'label'      => _x( 'Widget Titles', 'color setting', 'tortuga-pro' ),
-				'section'    => 'tortuga_pro_section_colors',
-				'settings'   => 'tortuga_theme_options[widget_title_color]',
+			$wp_customize, 'beetle_theme_options[widget_title_color]', array(
+				'label'      => _x( 'Widget Titles', 'color setting', 'beetle-pro' ),
+				'section'    => 'beetle_pro_section_colors',
+				'settings'   => 'beetle_theme_options[widget_title_color]',
 				'priority' => 6
 			) ) 
 		);
 		
 		// Add Widget Title Color setting
-		$wp_customize->add_setting( 'tortuga_theme_options[widget_link_color]', array(
+		$wp_customize->add_setting( 'beetle_theme_options[widget_link_color]', array(
 			'default'           => $default_options['widget_link_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -432,16 +432,16 @@ class Tortuga_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'tortuga_theme_options[widget_link_color]', array(
-				'label'      => _x( 'Widget Links', 'color setting', 'tortuga-pro' ),
-				'section'    => 'tortuga_pro_section_colors',
-				'settings'   => 'tortuga_theme_options[widget_link_color]',
+			$wp_customize, 'beetle_theme_options[widget_link_color]', array(
+				'label'      => _x( 'Widget Links', 'color setting', 'beetle-pro' ),
+				'section'    => 'beetle_pro_section_colors',
+				'settings'   => 'beetle_theme_options[widget_link_color]',
 				'priority' => 7
 			) ) 
 		);
 		
 		// Add Footer Widgets Color setting
-		$wp_customize->add_setting( 'tortuga_theme_options[footer_widgets_color]', array(
+		$wp_customize->add_setting( 'beetle_theme_options[footer_widgets_color]', array(
 			'default'           => $default_options['footer_widgets_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -449,16 +449,16 @@ class Tortuga_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'tortuga_theme_options[footer_widgets_color]', array(
-				'label'      => _x( 'Footer Widgets', 'color setting', 'tortuga-pro' ),
-				'section'    => 'tortuga_pro_section_colors',
-				'settings'   => 'tortuga_theme_options[footer_widgets_color]',
+			$wp_customize, 'beetle_theme_options[footer_widgets_color]', array(
+				'label'      => _x( 'Footer Widgets', 'color setting', 'beetle-pro' ),
+				'section'    => 'beetle_pro_section_colors',
+				'settings'   => 'beetle_theme_options[footer_widgets_color]',
 				'priority' => 8
 			) ) 
 		);
 		
 		// Add Footer Line Color setting
-		$wp_customize->add_setting( 'tortuga_theme_options[footer_color]', array(
+		$wp_customize->add_setting( 'beetle_theme_options[footer_color]', array(
 			'default'           => $default_options['footer_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -466,10 +466,10 @@ class Tortuga_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'tortuga_theme_options[footer_color]', array(
-				'label'      => _x( 'Footer Widgets', 'color setting', 'tortuga-pro' ),
-				'section'    => 'tortuga_pro_section_colors',
-				'settings'   => 'tortuga_theme_options[footer_color]',
+			$wp_customize, 'beetle_theme_options[footer_color]', array(
+				'label'      => _x( 'Footer Widgets', 'color setting', 'beetle-pro' ),
+				'section'    => 'beetle_pro_section_colors',
+				'settings'   => 'beetle_theme_options[footer_color]',
 				'priority' => 9
 			) ) 
 		);
@@ -479,6 +479,6 @@ class Tortuga_Pro_Custom_Colors {
 }
 
 // Run Class
-add_action( 'init', array( 'Tortuga_Pro_Custom_Colors', 'setup' ) );
+add_action( 'init', array( 'Beetle_Pro_Custom_Colors', 'setup' ) );
 
 endif;

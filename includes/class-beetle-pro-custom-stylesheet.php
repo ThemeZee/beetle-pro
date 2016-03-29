@@ -4,7 +4,7 @@
  *
  * Creates a custom stylesheet including the custom color, custom fonts and header spacing CSS code
  *
- * @package Tortuga Pro
+ * @package Beetle Pro
  */
 
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Tortuga_Pro_Custom_Stylesheet' ) ) :
+if ( ! class_exists( 'Beetle_Pro_Custom_Stylesheet' ) ) :
 
-class Tortuga_Pro_Custom_Stylesheet {
+class Beetle_Pro_Custom_Stylesheet {
 
 	/**
 	 * Footer Widgets Setup
@@ -23,8 +23,8 @@ class Tortuga_Pro_Custom_Stylesheet {
 	*/
 	static function setup() {
 		
-		// Return early if Tortuga Theme is not active
-		if ( ! current_theme_supports( 'tortuga-pro'  ) ) {
+		// Return early if Beetle Theme is not active
+		if ( ! current_theme_supports( 'beetle-pro'  ) ) {
 			return;
 		}
 		
@@ -50,7 +50,7 @@ class Tortuga_Pro_Custom_Stylesheet {
 			return;
 		}
 
-		wp_enqueue_style( 'tortuga-pro-custom-stylesheet', add_query_arg( 'tortuga_pro_custom_css', 1, home_url( '/' ) ) );
+		wp_enqueue_style( 'beetle-pro-custom-stylesheet', add_query_arg( 'beetle_pro_custom_css', 1, home_url( '/' ) ) );
 		
 	}
 	
@@ -61,7 +61,7 @@ class Tortuga_Pro_Custom_Stylesheet {
 	static function print_custom_css() {
 		
 		// Only print CSS if this is a stylesheet request
-		if( ! isset( $_GET['tortuga_pro_custom_css'] ) || intval( $_GET['tortuga_pro_custom_css'] ) !== 1 ) {
+		if( ! isset( $_GET['beetle_pro_custom_css'] ) || intval( $_GET['beetle_pro_custom_css'] ) !== 1 ) {
 			return;
 		}
 
@@ -106,13 +106,13 @@ class Tortuga_Pro_Custom_Stylesheet {
 	static function get_custom_css() {
 		
 		// Allow other modules to add CSS code per filter
-		return apply_filters( 'tortuga_pro_custom_css_stylesheet', '' );
+		return apply_filters( 'beetle_pro_custom_css_stylesheet', '' );
 		
 	}
 
 }
 
 // Run Class
-add_action( 'init', array( 'Tortuga_Pro_Custom_Stylesheet', 'setup' ) );
+add_action( 'init', array( 'Beetle_Pro_Custom_Stylesheet', 'setup' ) );
 
 endif;

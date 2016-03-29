@@ -1,5 +1,5 @@
 ===================================
-Tortuga Pro Changelog
+Beetle Pro Changelog
 ===================================
 
 Version 1.0

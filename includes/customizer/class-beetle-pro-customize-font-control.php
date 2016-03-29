@@ -2,7 +2,7 @@
 /**
  * Custom Font Control for the Customizer
  *
- * @package Tortuga Pro
+ * @package Beetle Pro
  */
 
 /**
@@ -15,28 +15,28 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 	 * Displays a custom Font control. Allows to switch fonts for particular elements on the theme.
 	 *
 	 */
-	class Tortuga_Pro_Customize_Font_Control extends WP_Customize_Control {
+	class Beetle_Pro_Customize_Font_Control extends WP_Customize_Control {
 	
 		private $fonts = false;
 		public $l10n = array();
 		
 		// critical for JS constructor
-		public $type = 'tortuga_pro_custom_font';
+		public $type = 'beetle_pro_custom_font';
 		
 		public function __construct($manager, $id, $args = array(), $options = array()) {
 		
 			// Make Buttons translateable
 			$this->l10n = array(
-				'previous' =>	__( 'Previous Font', 'tortuga-pro' ),
-				'next' =>		__( 'Next Font', 'tortuga-pro' ),
-				'standard' =>	_x( 'Default', 'default font button', 'tortuga-pro' )
+				'previous' =>	__( 'Previous Font', 'beetle-pro' ),
+				'next' =>		__( 'Next Font', 'beetle-pro' ),
+				'standard' =>	_x( 'Default', 'default font button', 'beetle-pro' )
 			);
 					
 			// Get Theme Options
-			$theme_options = Tortuga_Pro_Customizer::get_theme_options();
+			$theme_options = Beetle_Pro_Customizer::get_theme_options();
 			
 			// Set Fonts
-			$this->fonts = Tortuga_Pro_Custom_Font_Lists::get_fonts($theme_options['available_fonts']);
+			$this->fonts = Beetle_Pro_Custom_Font_Lists::get_fonts($theme_options['available_fonts']);
 	
 			parent::__construct( $manager, $id, $args );
 			
@@ -45,7 +45,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		public function enqueue() {
 
 			// Register and Enqueue Custom Font JS Constructor
-			wp_enqueue_script( 'tortuga-pro-custom-font-control', TORTUGA_PRO_PLUGIN_URL . 'assets/js/custom-font-control.js', array( 'customize-controls' ), TORTUGA_PRO_VERSION, true );
+			wp_enqueue_script( 'beetle-pro-custom-font-control', BEETLE_PRO_PLUGIN_URL . 'assets/js/custom-font-control.js', array( 'customize-controls' ), BEETLE_PRO_VERSION, true );
 		
 		}
 		

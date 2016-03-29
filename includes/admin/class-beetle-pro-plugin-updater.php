@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *
  * @version 1.6
  */
-class Tortuga_Pro_Plugin_Updater {
+class Beetle_Pro_Plugin_Updater {
     private $api_url   = '';
     private $api_data  = array();
     private $name      = '';
@@ -174,14 +174,14 @@ class Tortuga_Pro_Plugin_Updater {
 
             if ( empty( $version_info->download_link ) ) {
                 printf(
-                    __( 'There is a new version of %1$s available. <a target="_blank" class="thickbox" href="%2$s">View version %3$s details</a>.', 'tortuga-pro' ),
+                    __( 'There is a new version of %1$s available. <a target="_blank" class="thickbox" href="%2$s">View version %3$s details</a>.', 'beetle-pro' ),
                     esc_html( $version_info->name ),
                     esc_url( $changelog_link ),
                     esc_html( $version_info->new_version )
                 );
             } else {
                 printf(
-                    __( 'There is a new version of %1$s available. <a target="_blank" class="thickbox" href="%2$s">View version %3$s details</a> or <a href="%4$s">update now</a>.', 'tortuga-pro' ),
+                    __( 'There is a new version of %1$s available. <a target="_blank" class="thickbox" href="%2$s">View version %3$s details</a> or <a href="%4$s">update now</a>.', 'beetle-pro' ),
                     esc_html( $version_info->name ),
                     esc_url( $changelog_link ),
                     esc_html( $version_info->new_version ),
@@ -321,7 +321,7 @@ class Tortuga_Pro_Plugin_Updater {
         }
 
         if( ! current_user_can( 'update_plugins' ) ) {
-            wp_die( esc_html__( 'You do not have permission to install plugin updates', 'tortuga-pro' ), esc_html__( 'Error', 'tortuga-pro' ), array( 'response' => 403 ) );
+            wp_die( esc_html__( 'You do not have permission to install plugin updates', 'beetle-pro' ), esc_html__( 'Error', 'beetle-pro' ), array( 'response' => 403 ) );
         }
 
         $response = $this->api_request( 'plugin_latest_version', array( 'slug' => $_REQUEST['slug'] ) );
