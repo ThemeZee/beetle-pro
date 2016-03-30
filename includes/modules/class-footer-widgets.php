@@ -27,9 +27,9 @@ class Beetle_Pro_Footer_Widgets {
 			return;
 		}
 		
-		// Display widgets
+		// Display footer widgets
 		add_action( 'beetle_before_footer', array( __CLASS__, 'display_widgets' ) );
-		
+	
 	}
 	
 	/**

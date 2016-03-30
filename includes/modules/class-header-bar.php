@@ -40,12 +40,12 @@ class Beetle_Pro_Header_Bar {
 	*/
 	static function display_header_bar() { 
 
-		echo '<div id="header-bar" class="header-bar container clearfix">';
+		echo '<div id="header-bar" class="header-bar clearfix">';
 		
 		// Check if there is a social menu
 		if( has_nav_menu( 'social' ) ) {
 
-			echo '<div id="header-social-icons" class="social-icons-navigation clearfix">';
+			echo '<div id="header-social-icons" class="header-social-icons social-icons-navigation clearfix">';
 
 			// Display Social Icons Menu
 			wp_nav_menu( array(
@@ -100,7 +100,7 @@ class Beetle_Pro_Header_Bar {
 		
 		register_nav_menus( array(
 			'secondary' => esc_html__( 'Top Navigation', 'beetle-pro' ),
-			'social' => esc_html__( 'Social Icons', 'beetle-pro' ),
+			'social' => esc_html__( 'Header Social Icons', 'beetle-pro' ),
 		) );
 		
 	}

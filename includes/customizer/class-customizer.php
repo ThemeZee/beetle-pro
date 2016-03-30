@@ -68,9 +68,8 @@ class Beetle_Pro_Customizer {
 	static function get_default_options() {
 
 		$default_options = array(
-			'header_logo' 						=> '',
-			'logo_spacing'						=> 10,
-			'header_spacing'					=> 10,
+			'logo_spacing'						=> 0,
+			'header_spacing'					=> 20,
 			'footer_text'						=> '',
 			'credit_link' 						=> true,
 			'top_navi_color'					=> '#383838',
