@@ -120,6 +120,8 @@ class Beetle_Pro {
 		
 		// Include Magazine Widgets
 		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-boxed.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-list.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-single.php';
 		
 		// Include Custom Stylesheet class
 		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/class-custom-stylesheet.php';
@@ -135,7 +137,7 @@ class Beetle_Pro {
 	static function setup_actions() {
 		
 		// Enqueue Frontend Widget Styles
-		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_styles' ) );
+		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_styles' ), 11 );
 		
 		// Add Settings link to Plugin actions
 		add_filter( 'plugin_action_links_' . plugin_basename( BEETLE_PRO_PLUGIN_FILE ), array( __CLASS__, 'plugin_action_links' ) );

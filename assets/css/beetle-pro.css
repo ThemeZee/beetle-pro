@@ -177,6 +177,71 @@
 }
 
 /*--------------------------------------------------------------
+# Magazine Widgets
+--------------------------------------------------------------*/
+
+/* Magazine Posts Boxed Widget Horizontal Style */
+.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .wp-post-image {
+	float: left;	
+	width: 50%;
+	margin: 0;
+	padding-right: 1em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content {
+	float: right;
+	width: 50%;
+	padding-left: 1em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .medium-posts {
+	margin-right: -2em;
+}
+
+/* Magazine Posts Boxed Widget Vertical Style */
+.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post {
+	float: left;
+	width: 50%;
+	margin-bottom: 1em;
+	padding-right: 1em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-posts {
+	width: 50%;
+	margin-left: 50%;
+	padding-left: 1em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Magazine Posts List Widget */
+.widget-magazine-posts-list .type-post {
+	margin: 0 0 1.5em;
+}
+
+.widget-magazine-posts-list .type-post .wp-post-image {
+	float: left;
+	max-width: 34%;
+	margin: 0 1.5em 0 0;
+	padding: 0.3em 0;
+}
+
+.widget-magazine-posts-list .type-post .entry-title {
+	font-size: 20px;
+	font-size: 1.25rem;
+}
+
+/*--------------------------------------------------------------
 # Footer Widget Area
 --------------------------------------------------------------*/
 .footer-widgets-background {
@@ -288,10 +353,22 @@
 	
 }
 
+@media only screen and (max-width: 70em) {
+
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .more-link  {
+		display: none;
+	}
+	
+}
+
 /*--------------------------------------------------------------
 ## Desktop Medium ( < 1040px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 65em) {
+	
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content {
+		display: none;
+	}
 	
 	.footer-widget-column {
 		width: 50%;
@@ -521,9 +598,64 @@
 }
 
 /*--------------------------------------------------------------
+## Tablet Large ( < 880px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 55em) {
+
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content,
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .more-link {
+		display: inline-block;
+	}
+	
+}
+
+/*--------------------------------------------------------------
+## Tablet Medium ( < 800px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 50em) {
+	
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .more-link {
+		display: none;
+	}
+	
+}
+
+/*--------------------------------------------------------------
+## Tablet Small ( < 720px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 45em) {
+	
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content {
+		display: none;
+	}
+	
+}
+
+/*--------------------------------------------------------------
 ## Mobile Extra Large ( < 640px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 40em) {
+	
+	/* Magazine Post Widgets */
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .wp-post-image,
+	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post {
+		float: none;
+		width: 100%;
+		padding: 0;
+	}
+
+	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-posts {
+		width: 100%;
+		padding-top: 1em;
+		margin-left: 0;
+		padding-left: 0;
+	}
+	
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content {
+		float: right;
+		width: 50%;
+		padding-left: 1.5em;
+	}
 	
 	/* Footer Navigation Menu */
 	.footer-navigation-menu li {
@@ -542,6 +674,15 @@
 --------------------------------------------------------------*/
 @media only screen and (max-width: 35em) {
 	
+	/* Magazine Homepage: Category Post Widgets */
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .medium-posts {
+		margin-right: 0;
+	}
+	
+	.widget-magazine-posts-list .type-post .entry-content {
+		display: none;
+	}
+	
 	.footer-widgets {
 		margin-right: 0;
 	}
@@ -552,6 +693,52 @@
 		padding-right: 0;
 	}
 	
+}
+
+/*--------------------------------------------------------------
+## Mobile Medium ( < 480px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 30em) {
+	
+	/* Magazine Homepage: Category Post Widgets */
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content {
+		float: none;
+		width: 100%;
+		padding: 0;
+	}
+	
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content {
+		display: inline-block;
+	}
+	
+}
+
+/*--------------------------------------------------------------
+## Mobile Small ( < 320px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 25em) {
+	
+	.widget-magazine-posts-list .type-post .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+	
+}
+
+/*--------------------------------------------------------------
+## Mobile Small ( < 320px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 20em) {
+	
+	.widget-magazine-posts-list .type-post .entry-title {
+		font-size: 16px;
+		font-size: 1rem;
+	}
+	
+	.widget-magazine-posts-list .type-post .entry-meta {
+		display: none;
+	}
+
 }
 
 /*--------------------------------------------------------------
