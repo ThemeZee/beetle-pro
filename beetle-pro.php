@@ -2,7 +2,7 @@
 /*
 Plugin Name: Beetle Pro
 Plugin URI: http://themezee.com/addons/beetle-pro/
-Description: Adds additional features like footer widgets, custom colors, fonts and logo upload to the Beetle theme.
+Description: Adds additional features like custom colors, google fonts, widget areas and footer copyright to the Beetle theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
 Version: 1.0
@@ -12,7 +12,7 @@ License: GPL v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Beetle Pro
-Copyright(C) 2015, ThemeZee.com - support@themezee.com
+Copyright(C) 2016, ThemeZee.com - support@themezee.com
 
 */
 
@@ -103,23 +103,26 @@ class Beetle_Pro {
 	static function includes() {
 	
 		// Include Admin Classes
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/admin/class-beetle-pro-plugin-updater.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/admin/class-beetle-pro-settings.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/admin/class-beetle-pro-settings-page.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/admin/class-plugin-updater.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/admin/class-settings.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/admin/class-settings-page.php';
 		
 		// Include Customizer Classes
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/customizer/class-beetle-pro-customizer.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/customizer/class-customizer.php';
 		
 		// Include Pro Features
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-beetle-pro-custom-colors.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-beetle-pro-custom-fonts.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-beetle-pro-footer-line.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-beetle-pro-footer-widgets.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-beetle-pro-header-bar.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-beetle-pro-site-logo.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-custom-colors.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-custom-fonts.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-footer-line.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-footer-widgets.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-header-bar.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-site-logo.php';
+		
+		// Include Magazine Widgets
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-boxed.php';
 		
 		// Include Custom Stylesheet class
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/class-beetle-pro-custom-stylesheet.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/class-custom-stylesheet.php';
 
 	}
 	
