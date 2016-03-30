@@ -116,7 +116,8 @@ class Beetle_Pro {
 		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-footer-line.php';
 		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-footer-widgets.php';
 		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-header-bar.php';
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-site-logo.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-header-spacing.php';
+		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/modules/class-post-meta.php';
 		
 		// Include Magazine Widgets
 		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-boxed.php';
