@@ -51,21 +51,66 @@ class Beetle_Pro_Custom_Colors {
 		// Set Color CSS Variable
 		$color_css = '';
 		
-		/* Set Link Color */
-		if ( $theme_options['link_color'] != $default_options['link_color'] ) { 
+		// Set Top Navigation Color
+		if ( $theme_options['top_navi_color'] != $default_options['top_navi_color'] ) { 
 		
 			$color_css .= '
-				/* Link and Button Color Setting */
+				/* Top Navigation Color Setting */
+				.header-bar-wrap, 
+				.top-navigation-menu ul {
+					background: '. $theme_options['top_navi_color'] .';
+				}
+				';
+				
+		}
+		
+		// Set Primary Navigation Color
+		if ( $theme_options['navi_primary_color'] != $default_options['navi_primary_color'] ) { 
+		
+			$color_css .= '
+				/* Primary Navigation Color Setting */
+				.main-navigation-menu ul,
+				.main-navigation-menu li.current-menu-item > a {
+					background: '. $theme_options['navi_primary_color'] .';
+				}
+				';
+				
+		}
+		
+		// Set Secondary Navigation Color
+		if ( $theme_options['navi_secondary_color'] != $default_options['navi_secondary_color'] ) { 
+		
+			$color_css .= '
+				
+				/* Secondary Navigation Color Setting */
+				.primary-navigation,
+				.main-navigation-toggle {
+					background: '. $theme_options['navi_secondary_color'] .';
+				}
+				';
+				
+		}
+		
+		// Set Primary Content Color
+		if ( $theme_options['content_primary_color'] != $default_options['content_primary_color'] ) { 
+		
+			$color_css .= '
+				/* Content Primary Color Setting */
 				a,
 				a:link,
-				a:visited {
-					color: '. $theme_options['link_color'] .';
+				a:visited,
+				.site-title,
+				.site-title a:link, 
+				.site-title a:visited {
+					color: '. $theme_options['content_primary_color'] .';
 				}
 
 				a:hover,
 				a:focus,
-				a:active {
-					color: #303030;
+				a:active,
+				.site-title a:hover,
+				.site-title a:active {
+					color: #353535;
 				}
 				
 				button,
@@ -73,17 +118,13 @@ class Beetle_Pro_Custom_Colors {
 				input[type="reset"],
 				input[type="submit"],
 				.more-link,
-				.entry-tags .meta-tags a:hover, 
-				.entry-tags .meta-tags a:active,
-				.post-navigation .nav-links a,
-				.post-pagination a:hover,
-				.post-pagination a:active,
+				.entry-tags .meta-tags a,
+				.widget_tag_cloud .tagcloud a, 
 				.post-pagination .current,
-				.infinite-scroll #infinite-handle span:hover,
-				.post-slider-controls .zeeflex-direction-nav a,
+				.infinite-scroll #infinite-handle span,
 				.tzwb-social-icons .social-icons-menu li a {
 					color: #fff;
-					background: '. $theme_options['link_color'] .';
+					background: '. $theme_options['content_primary_color'] .';
 				}
 				
 				button:hover,
@@ -101,196 +142,162 @@ class Beetle_Pro_Custom_Colors {
 				.more-link:hover,
 				.more-link:focus,
 				.more-link:active,
-				.post-navigation .nav-links a:hover, 
-				.post-navigation .nav-links a:active,
-				.post-slider-controls .zeeflex-direction-nav a:hover,
-				.tzwb-social-icons .social-icons-menu li a:hover {
-					background: #303030;
+				.entry-tags .meta-tags a:hover, 
+				.entry-tags .meta-tags a:focus,
+				.entry-tags .meta-tags a:active,
+				.widget_tag_cloud .tagcloud a:hover, 
+				.widget_tag_cloud .tagcloud a:focus,
+				.widget_tag_cloud .tagcloud a:active,
+				.infinite-scroll #infinite-handle span:hover,
+				.infinite-scroll #infinite-handle span:active,
+				.tzwb-social-icons .social-icons-menu li a:hover,
+				.tzwb-social-icons .social-icons-menu li a:focus,
+				.tzwb-social-icons .social-icons-menu li a:active {
+					background: #353535;
 				}
 				';
 				
 		}
 		
-		// Set Top Navigation Color
-		if ( $theme_options['top_navi_color'] != $default_options['top_navi_color'] ) { 
+		/* Set Link Color */
+		if ( $theme_options['content_secondary_color'] != $default_options['content_secondary_color'] ) { 
 		
 			$color_css .= '
-				/* Top Navigation Color Setting */
-				.header-bar-wrap, 
-				.top-navigation-menu ul {
-					background: '. $theme_options['top_navi_color'] .';
-				}';
-				
-		}
-		
-		// Set Primary Navigation Color
-		if ( $theme_options['header_color'] != $default_options['header_color'] ) { 
-		
-			$color_css .= '
-				/* Header Color Setting */
-				.site-header,
-				.main-navigation-menu ul {
-					background: '. $theme_options['header_color'] .';
-				}';
-				
-		}
-		
-		// Set Secondary Navigation Color
-		if ( $theme_options['navi_color'] != $default_options['navi_color'] ) { 
-		
-			$color_css .= '
-				/* Navigation Color Setting */
-				.primary-navigation-wrap,
-				.main-navigation-menu ul {
-					border-color: '. $theme_options['navi_color'] .';
-				}
-				
-				.main-navigation-menu a:hover,
-				.main-navigation-menu a:active,
-				.main-navigation-menu li.current-menu-item > a {
-					background: '. $theme_options['navi_color'] .';
-				}
-												
-				@media only screen and (max-width: 60em) {
-					
-					.main-navigation-toggle,
-					.main-navigation-toggle:active,
-					.main-navigation-toggle:focus,
-					.main-navigation-toggle:hover,
-					.main-navigation-menu .submenu-dropdown-toggle:hover,
-					.main-navigation-menu .submenu-dropdown-toggle:active {
-						background: '. $theme_options['navi_color'] .';
-					}
-					
-					.main-navigation-menu {
-						border-color: '. $theme_options['navi_color'] .';
-					}
-					
-				}
-				';
-				
-		}
-		
-		// Set Primary Post Color
-		if ( $theme_options['title_color'] != $default_options['title_color'] ) { 
-		
-			$color_css .= '
-				/* Post Titles Primary Color Setting */
-				.archive-title, 
-				.page-title, 
-				.entry-title, 
+				/* Content Secondary Color Setting */
+				a:hover,
+				a:focus,
+				a:active,
+				.site-title a:hover,
+				.site-title a:active,
+				.page-title,
+				.entry-title,
 				.entry-title a:link, 
 				.entry-title a:visited,
-				.comments-header .comments-title,
-				.comment-reply-title span {
-					color: '. $theme_options['title_color'] .';
+				.widget-title,
+				.widget-title a:link, 
+				.widget-title a:visited,
+				.page-header .archive-title {
+					color: '. $theme_options['content_secondary_color'] .';
 				}
 				
 				.entry-title a:hover, 
-				.entry-title a:active{
-					color: #303030;
-				}
-				
-				.page-header,
-				.type-post, 
-				.type-page, 
-				.type-attachment,
-				.comments-area  {
-					border-color: '. $theme_options['title_color'] .';
-				}
-				';
-				
-		}
-		
-		// Set Widget Title Color
-		if ( $theme_options['widget_title_color'] != $default_options['widget_title_color'] ) { 
-		
-			$color_css .= '
-				/* Widget Titles Color Setting */
-				.widget,
-				.widget-magazine-posts-columns .magazine-posts-columns .magazine-posts-columns-content {
-					border-color: '. $theme_options['widget_title_color'] .';
-				}
-				
-				.widget-title,
-				.widget-title a:link,
-				.widget-title a:visited {
-					color: '. $theme_options['widget_title_color'] .';
-				}
-				
+				.entry-title a:active,
 				.widget-title a:hover, 
-				.widget-title a:active  {
-					color: #303030;
+				.widget-title a:active {
+					color: #cc77bb;
 				}
 				
-				.tzwb-tabbed-content .tzwb-tabnavi li a:hover, 
+				.widget-header,
+				.page-header {
+					border-bottom: 4px solid '. $theme_options['content_secondary_color'] .';
+				}
+				
+				button:hover,
+				input[type="button"]:hover,
+				input[type="reset"]:hover,
+				input[type="submit"]:hover,
+				button:focus,
+				input[type="button"]:focus,
+				input[type="reset"]:focus,
+				input[type="submit"]:focus,
+				button:active,
+				input[type="button"]:active,
+				input[type="reset"]:active,
+				input[type="submit"]:active,
+				.more-link:hover,
+				.more-link:focus,
+				.more-link:active,
+				.entry-tags .meta-tags a:hover, 
+				.entry-tags .meta-tags a:focus,
+				.entry-tags .meta-tags a:active,
+				.widget_tag_cloud .tagcloud a:hover, 
+				.widget_tag_cloud .tagcloud a:focus,
+				.widget_tag_cloud .tagcloud a:active,
+				.post-pagination a:link,
+				.post-pagination a:visited,
+				.infinite-scroll #infinite-handle span:hover,
+				.infinite-scroll #infinite-handle span:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a, 
+				.tzwb-tabbed-content .tzwb-tabnavi li a:link,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:visited,
+				.tzwb-social-icons .social-icons-menu li a:hover,
+				.tzwb-social-icons .social-icons-menu li a:focus,
+				.tzwb-social-icons .social-icons-menu li a:active {
+					background: '. $theme_options['content_secondary_color'] .';
+				}
+				
+				.post-pagination a:hover,
+				.post-pagination a:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-					background: '. $theme_options['widget_title_color'] .';
+					background: #cc77bb;
 				}
 				';
 				
 		}
 		
-		// Set Widget Link Color
-		if ( $theme_options['widget_link_color'] != $default_options['widget_link_color'] ) { 
+		// Set Primary Hover Content Color
+		if ( $theme_options['content_primary_color'] != $default_options['content_primary_color'] ) { 
 		
 			$color_css .= '
-				/* Widget Links Color Setting */
-				.sidebar .widget a:link,
-				.sidebar .widget a:visited {
-					color: '. $theme_options['widget_link_color'] .';
+				/* Content Primary Hover Color Setting */
+				.entry-title a:hover, 
+				.entry-title a:active,
+				.widget-title a:hover, 
+				.widget-title a:active {
+					color: '. $theme_options['content_primary_color'] .';
 				}
 				
-				.sidebar .widget a:hover,
-				.sidebar .widget a:active,
-				.sidebar .widget .entry-meta a:link,
-				.sidebar .widget .entry-meta a:visited {
-					color: #303030;
-				}
-				
-				.sidebar .widget .entry-meta a:hover,
-				.sidebar .widget .entry-meta a:active {
-					color: #777;
-				}
-				
-				.sidebar .widget_tag_cloud .tagcloud a:link, 
-				.sidebar .widget_tag_cloud .tagcloud a:visited {
-					color: #fff;
-				}
-					
-				.sidebar .widget_tag_cloud .tagcloud a:hover, 
-				.sidebar .widget_tag_cloud .tagcloud a:active,
-				.tzwb-social-icons .social-icons-menu li a {
-					color: #fff;
-					background: '. $theme_options['widget_link_color'] .';
-				}
-
-				.tzwb-social-icons .social-icons-menu li a:hover {
-					background: #303030;
+				.post-pagination a:hover,
+				.post-pagination a:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
+					background: '. $theme_options['content_primary_color'] .';
 				}
 				';
+				
+		}
+		
+		// Set Slider Color
+		if ( $theme_options['slider_color'] != $default_options['slider_color'] ) { 
+		
+			$color_css .= '
+				/* Slider Color Setting */
+				.post-slider-controls .zeeflex-direction-nav a {
+					background: '. $theme_options['slider_color'] .';
+				}
+				
+				.post-slider .zeeslide .slide-post {
+					border-color: '. $theme_options['slider_color'] .';
+				}
+				';
+				
 		}
 		
 		// Set Footer Widgets Color
-		if ( $theme_options['footer_widgets_color'] != $default_options['footer_widgets_color'] ) { 
+		if ( $theme_options['footer_area_color'] != $default_options['footer_area_color'] ) { 
 		
 			$color_css .= '
-				/* Footer Widget Color Setting */
+				
+				/* Footer Area Color Setting */
+				.footer-wrap,
 				.footer-widgets-background {
-					background: '. $theme_options['footer_widgets_color'] .';
+					background: '. $theme_options['footer_area_color'] .';
 				}
 				';
 				
 		}
 		
 		// Set Footer Line Color
-		if ( $theme_options['footer_color'] != $default_options['footer_color'] ) { 
+		if ( $theme_options['footer_navi_color'] != $default_options['footer_navi_color'] ) { 
 		
 			$color_css .= '
-				/* Footer Line Color Setting */
-				.footer-wrap {
-					background: '. $theme_options['footer_color'] .';
+				
+				/* Footer Navigation Color Setting */
+				.footer-navigation {
+					background: '. $theme_options['footer_navi_color'] .';
 				}
 				';
 				
@@ -339,138 +346,121 @@ class Beetle_Pro_Custom_Colors {
 		);
 		
 		// Add Navigation Primary Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[header_color]', array(
-			'default'           => $default_options['header_color'],
-			'type'           	=> 'option',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color'
-			)
-		);
-		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[header_color]', array(
-				'label'      => _x( 'Header', 'color setting', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[header_color]',
-				'priority' => 2
-			) ) 
-		);
-		
-		// Add Navigation Secondary Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[navi_color]', array(
-			'default'           => $default_options['navi_color'],
+		$wp_customize->add_setting( 'beetle_theme_options[navi_primary_color]', array(
+			'default'           => $default_options['navi_primary_color'],
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'sanitize_hex_color'
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[navi_color]', array(
-				'label'      => _x( 'Navigation', 'color setting', 'beetle-pro' ),
+			$wp_customize, 'beetle_theme_options[navi_primary_color]', array(
+				'label'      => _x( 'Navigation (primary)', 'color setting', 'beetle-pro' ),
 				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[navi_color]',
+				'settings'   => 'beetle_theme_options[navi_primary_color]',
+				'priority' => 2
+			) ) 
+		);
+		
+		// Add Navigation Secondary Color setting
+		$wp_customize->add_setting( 'beetle_theme_options[navi_secondary_color]', array(
+			'default'           => $default_options['navi_secondary_color'],
+			'type'           	=> 'option',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control( new WP_Customize_Color_Control( 
+			$wp_customize, 'beetle_theme_options[navi_secondary_color]', array(
+				'label'      => _x( 'Navigation (secondary)', 'color setting', 'beetle-pro' ),
+				'section'    => 'beetle_pro_section_colors',
+				'settings'   => 'beetle_theme_options[navi_secondary_color]',
 				'priority' => 3
 			) ) 
 		);
 		
 		// Add Post Primary Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[title_color]', array(
-			'default'           => $default_options['title_color'],
+		$wp_customize->add_setting( 'beetle_theme_options[content_primary_color]', array(
+			'default'           => $default_options['content_primary_color'],
 			'type'           	=> 'option',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'sanitize_hex_color'
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[title_color]', array(
-				'label'      => _x( 'Post Titles', 'color setting', 'beetle-pro' ),
+			$wp_customize, 'beetle_theme_options[content_primary_color]', array(
+				'label'      => _x( 'Content (primary)', 'color setting', 'beetle-pro' ),
 				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[title_color]',
+				'settings'   => 'beetle_theme_options[content_primary_color]',
 				'priority' => 4
 			) ) 
 		);
 		
 		// Add Link and Button Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[link_color]', array(
-			'default'           => $default_options['link_color'],
+		$wp_customize->add_setting( 'beetle_theme_options[content_secondary_color]', array(
+			'default'           => $default_options['content_secondary_color'],
 			'type'           	=> 'option',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'sanitize_hex_color'
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[link_color]', array(
-				'label'      => _x( 'Links and Buttons', 'color setting', 'beetle-pro' ),
+			$wp_customize, 'beetle_theme_options[content_secondary_color]', array(
+				'label'      => _x( 'Content (secondary)', 'color setting', 'beetle-pro' ),
 				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[link_color]',
+				'settings'   => 'beetle_theme_options[content_secondary_color]',
 				'priority' => 5
 			) ) 
 		);
 		
-		// Add Widget Title Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[widget_title_color]', array(
-			'default'           => $default_options['widget_title_color'],
+		// Add Slider Color setting
+		$wp_customize->add_setting( 'beetle_theme_options[slider_color]', array(
+			'default'           => $default_options['slider_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color'
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[widget_title_color]', array(
-				'label'      => _x( 'Widget Titles', 'color setting', 'beetle-pro' ),
+			$wp_customize, 'beetle_theme_options[slider_color]', array(
+				'label'      => _x( 'Post Slider', 'color setting', 'beetle-pro' ),
 				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[widget_title_color]',
+				'settings'   => 'beetle_theme_options[slider_color]',
 				'priority' => 6
 			) ) 
 		);
 		
-		// Add Widget Title Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[widget_link_color]', array(
-			'default'           => $default_options['widget_link_color'],
+		// Add Footer Widgets Color setting
+		$wp_customize->add_setting( 'beetle_theme_options[footer_area_color]', array(
+			'default'           => $default_options['footer_area_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color'
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[widget_link_color]', array(
-				'label'      => _x( 'Widget Links', 'color setting', 'beetle-pro' ),
+			$wp_customize, 'beetle_theme_options[footer_area_color]', array(
+				'label'      => _x( 'Footer', 'color setting', 'beetle-pro' ),
 				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[widget_link_color]',
+				'settings'   => 'beetle_theme_options[footer_area_color]',
 				'priority' => 7
 			) ) 
 		);
 		
-		// Add Footer Widgets Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[footer_widgets_color]', array(
-			'default'           => $default_options['footer_widgets_color'],
-			'type'           	=> 'option',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color'
-			)
-		);
-		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[footer_widgets_color]', array(
-				'label'      => _x( 'Footer Widgets', 'color setting', 'beetle-pro' ),
-				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[footer_widgets_color]',
-				'priority' => 8
-			) ) 
-		);
-		
 		// Add Footer Line Color setting
-		$wp_customize->add_setting( 'beetle_theme_options[footer_color]', array(
-			'default'           => $default_options['footer_color'],
+		$wp_customize->add_setting( 'beetle_theme_options[footer_navi_color]', array(
+			'default'           => $default_options['footer_navi_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color'
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'beetle_theme_options[footer_color]', array(
-				'label'      => _x( 'Footer Widgets', 'color setting', 'beetle-pro' ),
+			$wp_customize, 'beetle_theme_options[footer_navi_color]', array(
+				'label'      => _x( 'Footer Navigation', 'color setting', 'beetle-pro' ),
 				'section'    => 'beetle_pro_section_colors',
-				'settings'   => 'beetle_theme_options[footer_color]',
-				'priority' => 9
+				'settings'   => 'beetle_theme_options[footer_navi_color]',
+				'priority' 	=> 8
 			) ) 
 		);
 		

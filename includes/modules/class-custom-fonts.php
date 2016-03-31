@@ -82,11 +82,8 @@ class Beetle_Pro_Custom_Fonts {
 			$font_css .= '
 				/* Headings Font Setting */
 				.site-title, 
-				.archive-title,
 				.page-title, 
-				.entry-title,
-				.comments-header .comments-title,
-				.comment-reply-title span {
+				.entry-title {
 					font-family: "'.esc_attr($theme_options['title_font']).'";
 				}
 				';
@@ -100,7 +97,8 @@ class Beetle_Pro_Custom_Fonts {
 				/* Navigation Font Setting */
 				.top-navigation-menu a,
 				.main-navigation-menu a,
-				.footer-navigation-menu a {
+				.footer-navigation-menu a,
+				.footer-navigation .today {
 					font-family: "'.esc_attr($theme_options['navi_font']).'";
 				}
 				';
@@ -112,6 +110,9 @@ class Beetle_Pro_Custom_Fonts {
 		
 			$font_css .= '
 				/* Widget Titles Font Setting */
+				.page-header .archive-title,
+				.comments-header .comments-title,
+				.comment-reply-title span,
 				.widget-title {
 					font-family: "'.esc_attr($theme_options['widget_title_font']).'";
 				}
