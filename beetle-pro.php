@@ -68,7 +68,7 @@ class Beetle_Pro {
 		define( 'BEETLE_PRO_VERSION', '1.0' );
 		
 		// Define Plugin Name
-		define( 'BEETLE_PRO_PRODUCT_ID', 56518 );
+		define( 'BEETLE_PRO_PRODUCT_ID', 58393 );
 
 		// Define Update API URL
 		define( 'BEETLE_PRO_STORE_API_URL', 'https://themezee.com' ); 
