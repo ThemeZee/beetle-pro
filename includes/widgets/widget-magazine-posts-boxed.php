@@ -479,12 +479,3 @@ class Beetle_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	}
 	
 }
-
-// Register Widget
-add_action( 'widgets_init', 'beetle_pro_register_magazine_posts_boxed_widget' );
-
-function beetle_pro_register_magazine_posts_boxed_widget() {
-
-	register_widget( 'Beetle_Pro_Magazine_Posts_Boxed_Widget' );
-	
-}
