@@ -5,7 +5,7 @@ Plugin URI: http://themezee.com/addons/beetle-pro/
 Description: Adds additional features like custom colors, google fonts, widget areas and footer copyright to the Beetle theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.0
+Version: 1.0.1
 Text Domain: beetle-pro
 Domain Path: /languages/
 License: GPL v3

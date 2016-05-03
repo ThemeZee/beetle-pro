@@ -4,6 +4,8 @@ Beetle Pro Changelog
 
 Version 1.0.1
 -----------------------------------
+[improved] styling of license settings page
+[added] dismiss links to admin notices
 [fixed] register additional Magazine Post widgets only if Beetle theme is active
 [changed] default values for post meta settings
 
