@@ -65,7 +65,7 @@ class Beetle_Pro {
 		define( 'BEETLE_PRO_NAME', 'Beetle Pro' );
 
 		// Define Version Number
-		define( 'BEETLE_PRO_VERSION', '1.0' );
+		define( 'BEETLE_PRO_VERSION', '1.0.1' );
 		
 		// Define Plugin Name
 		define( 'BEETLE_PRO_PRODUCT_ID', 58393 );
