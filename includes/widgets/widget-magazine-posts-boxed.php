@@ -21,7 +21,8 @@ class Beetle_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 			sprintf( esc_html__( 'Magazine Posts: Boxed (%s)', 'beetle-pro' ), 'Beetle Pro' ), // Name
 			array( 
 				'classname' => 'beetle_magazine_posts_boxed', 
-				'description' => esc_html__( 'Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'beetle-pro' ) 
+				'description' => esc_html__( 'Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'beetle-pro' ),
+				'customize_selective_refresh' => true,  
 			) // Args
 		);
 
