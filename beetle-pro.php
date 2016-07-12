@@ -122,9 +122,6 @@ class Beetle_Pro {
 		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-list.php';
 		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-single.php';
 
-		// Include Custom Stylesheet class.
-		require_once BEETLE_PRO_PLUGIN_DIR . '/includes/class-custom-stylesheet.php';
-
 	}
 
 	/**
@@ -163,6 +160,18 @@ class Beetle_Pro {
 
 		// Enqueue Plugin Stylesheet.
 		wp_enqueue_style( 'beetle-pro', BEETLE_PRO_PLUGIN_URL . 'assets/css/beetle-pro.css', array(), BEETLE_PRO_VERSION );
+
+		// Get Custom CSS.
+		$custom_css = apply_filters( 'beetle_pro_custom_css_stylesheet', '' );
+
+		// Sanitize Custom CSS.
+		$custom_css = wp_kses( $custom_css, array( '\'', '\"' ) );
+		$custom_css = str_replace( '&gt;', '>', $custom_css );
+		$custom_css = preg_replace( '/\n/', '', $custom_css );
+		$custom_css = preg_replace( '/\t/', '', $custom_css );
+
+		// Add Custom CSS.
+		wp_add_inline_style( 'beetle-pro', $custom_css );
 
 	}
 

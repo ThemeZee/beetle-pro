@@ -54,11 +54,11 @@ class Beetle_Pro_Custom_Colors {
 		if ( $theme_options['top_navi_color'] != $default_options['top_navi_color'] ) {
 
 			$custom_css .= '
-                /* Top Navigation Color Setting */
-                .header-bar-wrap,
-                .top-navigation-menu ul {
+				/* Top Navigation Color Setting */
+				.header-bar-wrap,
+				.top-navigation-menu ul {
 					background: '. $theme_options['top_navi_color'] .';
-                }
+				}
 				';
 
 		}
@@ -67,11 +67,11 @@ class Beetle_Pro_Custom_Colors {
 		if ( $theme_options['navi_primary_color'] != $default_options['navi_primary_color'] ) {
 
 			$custom_css .= '
-                /* Primary Navigation Color Setting */
-                .main-navigation-menu ul,
-                .main-navigation-menu li.current-menu-item > a {
+				/* Primary Navigation Color Setting */
+				.main-navigation-menu ul,
+				.main-navigation-menu li.current-menu-item > a {
 					background: '. $theme_options['navi_primary_color'] .';
-                }
+				}
 				';
 
 		}
@@ -81,11 +81,11 @@ class Beetle_Pro_Custom_Colors {
 
 			$custom_css .= '
 
-                /* Secondary Navigation Color Setting */
-                .primary-navigation,
-                .main-navigation-toggle {
+				/* Secondary Navigation Color Setting */
+				.primary-navigation,
+				.main-navigation-toggle {
 					background: '. $theme_options['navi_secondary_color'] .';
-                }
+				}
 				';
 
 		}
@@ -94,66 +94,66 @@ class Beetle_Pro_Custom_Colors {
 		if ( $theme_options['content_primary_color'] != $default_options['content_primary_color'] ) {
 
 			$custom_css .= '
-                /* Content Primary Color Setting */
-                a,
-                a:link,
-                a:visited,
-                .site-title,
-                .site-title a:link,
-                .site-title a:visited {
+				/* Content Primary Color Setting */
+				a,
+				a:link,
+				a:visited,
+				.site-title,
+				.site-title a:link,
+				.site-title a:visited {
 					color: '. $theme_options['content_primary_color'] .';
-                }
+				}
 
-                a:hover,
-                a:focus,
-                a:active,
-                .site-title a:hover,
-                .site-title a:active {
-                    color: #353535;
-                }
+				a:hover,
+				a:focus,
+				a:active,
+				.site-title a:hover,
+				.site-title a:active {
+				    color: #353535;
+				}
 
-                button,
-                input[type="button"],
-                input[type="reset"],
-                input[type="submit"],
-                .more-link,
-                .entry-tags .meta-tags a,
-                .widget_tag_cloud .tagcloud a,
-                .post-pagination .current,
-                .infinite-scroll #infinite-handle span,
-                .tzwb-social-icons .social-icons-menu li a {
-                    color: #fff;
+				button,
+				input[type="button"],
+				input[type="reset"],
+				input[type="submit"],
+				.more-link,
+				.entry-tags .meta-tags a,
+				.widget_tag_cloud .tagcloud a,
+				.post-pagination .current,
+				.infinite-scroll #infinite-handle span,
+				.tzwb-social-icons .social-icons-menu li a {
+				    color: #fff;
 					background: '. $theme_options['content_primary_color'] .';
-                }
+				}
 
-                button:hover,
-                input[type="button"]:hover,
-                input[type="reset"]:hover,
-                input[type="submit"]:hover,
-                button:focus,
-                input[type="button"]:focus,
-                input[type="reset"]:focus,
-                input[type="submit"]:focus,
-                button:active,
-                input[type="button"]:active,
-                input[type="reset"]:active,
-                input[type="submit"]:active,
-                .more-link:hover,
-                .more-link:focus,
-                .more-link:active,
-                .entry-tags .meta-tags a:hover,
-                .entry-tags .meta-tags a:focus,
-                .entry-tags .meta-tags a:active,
-                .widget_tag_cloud .tagcloud a:hover,
-                .widget_tag_cloud .tagcloud a:focus,
-                .widget_tag_cloud .tagcloud a:active,
-                .infinite-scroll #infinite-handle span:hover,
-                .infinite-scroll #infinite-handle span:active,
-                .tzwb-social-icons .social-icons-menu li a:hover,
-                .tzwb-social-icons .social-icons-menu li a:focus,
-                .tzwb-social-icons .social-icons-menu li a:active {
-                    background: #353535;
-                }
+				button:hover,
+				input[type="button"]:hover,
+				input[type="reset"]:hover,
+				input[type="submit"]:hover,
+				button:focus,
+				input[type="button"]:focus,
+				input[type="reset"]:focus,
+				input[type="submit"]:focus,
+				button:active,
+				input[type="button"]:active,
+				input[type="reset"]:active,
+				input[type="submit"]:active,
+				.more-link:hover,
+				.more-link:focus,
+				.more-link:active,
+				.entry-tags .meta-tags a:hover,
+				.entry-tags .meta-tags a:focus,
+				.entry-tags .meta-tags a:active,
+				.widget_tag_cloud .tagcloud a:hover,
+				.widget_tag_cloud .tagcloud a:focus,
+				.widget_tag_cloud .tagcloud a:active,
+				.infinite-scroll #infinite-handle span:hover,
+				.infinite-scroll #infinite-handle span:active,
+				.tzwb-social-icons .social-icons-menu li a:hover,
+				.tzwb-social-icons .social-icons-menu li a:focus,
+				.tzwb-social-icons .social-icons-menu li a:active {
+				    background: #353535;
+				}
 				';
 
 		}
@@ -162,76 +162,76 @@ class Beetle_Pro_Custom_Colors {
 		if ( $theme_options['content_secondary_color'] != $default_options['content_secondary_color'] ) {
 
 			$custom_css .= '
-                /* Content Secondary Color Setting */
-                a:hover,
-                a:focus,
-                a:active,
-                .site-title a:hover,
-                .site-title a:active,
-                .page-title,
-                .entry-title,
-                .entry-title a:link,
-                .entry-title a:visited,
-                .widget-title,
-                .widget-title a:link,
-                .widget-title a:visited,
-                .page-header .archive-title {
+				/* Content Secondary Color Setting */
+				a:hover,
+				a:focus,
+				a:active,
+				.site-title a:hover,
+				.site-title a:active,
+				.page-title,
+				.entry-title,
+				.entry-title a:link,
+				.entry-title a:visited,
+				.widget-title,
+				.widget-title a:link,
+				.widget-title a:visited,
+				.page-header .archive-title {
 					color: '. $theme_options['content_secondary_color'] .';
-                }
+				}
 
-                .entry-title a:hover,
-                .entry-title a:active,
-                .widget-title a:hover,
-                .widget-title a:active {
-                    color: #cc77bb;
-                }
+				.entry-title a:hover,
+				.entry-title a:active,
+				.widget-title a:hover,
+				.widget-title a:active {
+				    color: #cc77bb;
+				}
 
-                .widget-header,
-                .page-header {
+				.widget-header,
+				.page-header {
 					border-bottom: 4px solid '. $theme_options['content_secondary_color'] .';
-                }
+				}
 
-                button:hover,
-                input[type="button"]:hover,
-                input[type="reset"]:hover,
-                input[type="submit"]:hover,
-                button:focus,
-                input[type="button"]:focus,
-                input[type="reset"]:focus,
-                input[type="submit"]:focus,
-                button:active,
-                input[type="button"]:active,
-                input[type="reset"]:active,
-                input[type="submit"]:active,
-                .more-link:hover,
-                .more-link:focus,
-                .more-link:active,
-                .entry-tags .meta-tags a:hover,
-                .entry-tags .meta-tags a:focus,
-                .entry-tags .meta-tags a:active,
-                .widget_tag_cloud .tagcloud a:hover,
-                .widget_tag_cloud .tagcloud a:focus,
-                .widget_tag_cloud .tagcloud a:active,
-                .post-pagination a:link,
-                .post-pagination a:visited,
-                .infinite-scroll #infinite-handle span:hover,
-                .infinite-scroll #infinite-handle span:active,
-                .tzwb-tabbed-content .tzwb-tabnavi li a,
-                .tzwb-tabbed-content .tzwb-tabnavi li a:link,
-                .tzwb-tabbed-content .tzwb-tabnavi li a:visited,
-                .tzwb-social-icons .social-icons-menu li a:hover,
-                .tzwb-social-icons .social-icons-menu li a:focus,
-                .tzwb-social-icons .social-icons-menu li a:active {
+				button:hover,
+				input[type="button"]:hover,
+				input[type="reset"]:hover,
+				input[type="submit"]:hover,
+				button:focus,
+				input[type="button"]:focus,
+				input[type="reset"]:focus,
+				input[type="submit"]:focus,
+				button:active,
+				input[type="button"]:active,
+				input[type="reset"]:active,
+				input[type="submit"]:active,
+				.more-link:hover,
+				.more-link:focus,
+				.more-link:active,
+				.entry-tags .meta-tags a:hover,
+				.entry-tags .meta-tags a:focus,
+				.entry-tags .meta-tags a:active,
+				.widget_tag_cloud .tagcloud a:hover,
+				.widget_tag_cloud .tagcloud a:focus,
+				.widget_tag_cloud .tagcloud a:active,
+				.post-pagination a:link,
+				.post-pagination a:visited,
+				.infinite-scroll #infinite-handle span:hover,
+				.infinite-scroll #infinite-handle span:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:link,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:visited,
+				.tzwb-social-icons .social-icons-menu li a:hover,
+				.tzwb-social-icons .social-icons-menu li a:focus,
+				.tzwb-social-icons .social-icons-menu li a:active {
 					background: '. $theme_options['content_secondary_color'] .';
-                }
+				}
 
-                .post-pagination a:hover,
-                .post-pagination a:active,
-                .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
-                .tzwb-tabbed-content .tzwb-tabnavi li a:active,
-                .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-                    background: #cc77bb;
-                }
+				.post-pagination a:hover,
+				.post-pagination a:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
+				    background: #cc77bb;
+				}
 				';
 
 		}
@@ -240,21 +240,21 @@ class Beetle_Pro_Custom_Colors {
 		if ( $theme_options['content_primary_color'] != $default_options['content_primary_color'] ) {
 
 			$custom_css .= '
-                /* Content Primary Hover Color Setting */
-                .entry-title a:hover,
-                .entry-title a:active,
-                .widget-title a:hover,
-                .widget-title a:active {
+				/* Content Primary Hover Color Setting */
+				.entry-title a:hover,
+				.entry-title a:active,
+				.widget-title a:hover,
+				.widget-title a:active {
 					color: '. $theme_options['content_primary_color'] .';
-                }
+				}
 
-                .post-pagination a:hover,
-                .post-pagination a:active,
-                .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
-                .tzwb-tabbed-content .tzwb-tabnavi li a:active,
-                .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
+				.post-pagination a:hover,
+				.post-pagination a:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
 					background: '. $theme_options['content_primary_color'] .';
-                }
+				}
 				';
 
 		}
@@ -263,14 +263,14 @@ class Beetle_Pro_Custom_Colors {
 		if ( $theme_options['slider_color'] != $default_options['slider_color'] ) {
 
 			$custom_css .= '
-                /* Slider Color Setting */
-                .post-slider-controls .zeeflex-direction-nav a {
+				/* Slider Color Setting */
+				.post-slider-controls .zeeflex-direction-nav a {
 					background: '. $theme_options['slider_color'] .';
-                }
+				}
 
-                .post-slider .zeeslide .slide-post {
+				.post-slider .zeeslide .slide-post {
 					border-color: '. $theme_options['slider_color'] .';
-                }
+				}
 				';
 
 		}
@@ -280,11 +280,11 @@ class Beetle_Pro_Custom_Colors {
 
 			$custom_css .= '
 
-                /* Footer Area Color Setting */
-                .footer-wrap,
-                .footer-widgets-background {
+				/* Footer Area Color Setting */
+				.footer-wrap,
+				.footer-widgets-background {
 					background: '. $theme_options['footer_area_color'] .';
-                }
+				}
 				';
 
 		}
@@ -294,10 +294,10 @@ class Beetle_Pro_Custom_Colors {
 
 			$custom_css .= '
 
-                /* Footer Navigation Color Setting */
-                .footer-navigation {
+				/* Footer Navigation Color Setting */
+				.footer-navigation {
 					background: '. $theme_options['footer_navi_color'] .';
-                }
+				}
 				';
 
 		}
