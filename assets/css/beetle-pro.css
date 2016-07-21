@@ -44,9 +44,6 @@
 	padding: 0.75em 1em;
 	text-transform: uppercase;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -63,9 +60,6 @@
 	content: '\f431';
 	color: #fff;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -99,14 +93,9 @@
 	min-width: 250px;
 	min-width: 16rem;
 	padding: 0.8em 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 	-webkit-transition: none;
-	-moz-transition: none;
-	-ms-transition: none;
-	-o-transition: none;
 	transition: none;
 }
 
@@ -168,8 +157,6 @@
 	width: 50%;
 	margin: 0;
 	padding-right: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -177,8 +164,6 @@
 	float: right;
 	width: 50%;
 	padding-left: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -192,8 +177,6 @@
 	width: 50%;
 	margin-bottom: 1em;
 	padding-right: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -201,8 +184,6 @@
 	width: 50%;
 	margin-left: 50%;
 	padding-left: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -239,8 +220,6 @@
 	float: left;
 	width: 25%;
 	padding-right: 2em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -315,9 +294,6 @@
 	padding: 0.75em 1em;
 	text-transform: uppercase;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
