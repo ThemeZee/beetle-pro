@@ -5,7 +5,7 @@ Plugin URI: http://themezee.com/addons/beetle-pro/
 Description: Adds additional features like custom colors, google fonts, widget areas and footer copyright to the Beetle theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.0.3
+Version: 1.0.4
 Text Domain: beetle-pro
 Domain Path: /languages/
 License: GPL v3
@@ -62,7 +62,7 @@ class Beetle_Pro {
 		define( 'BEETLE_PRO_NAME', 'Beetle Pro' );
 
 		// Define Version Number.
-		define( 'BEETLE_PRO_VERSION', '1.0.3' );
+		define( 'BEETLE_PRO_VERSION', '1.0.4' );
 
 		// Define Plugin Name.
 		define( 'BEETLE_PRO_PRODUCT_ID', 58393 );
@@ -158,8 +158,12 @@ class Beetle_Pro {
 			return;
 		}
 
-		// Enqueue Plugin Stylesheet.
-		wp_enqueue_style( 'beetle-pro', BEETLE_PRO_PLUGIN_URL . 'assets/css/beetle-pro.css', array(), BEETLE_PRO_VERSION );
+		// Enqueue RTL or default Plugin Stylesheet.
+		if ( is_rtl() ) {
+			wp_enqueue_style( 'beetle-pro', BEETLE_PRO_PLUGIN_URL . 'assets/css/beetle-pro-rtl.css', array(), BEETLE_PRO_VERSION );
+		} else {
+			wp_enqueue_style( 'beetle-pro', BEETLE_PRO_PLUGIN_URL . 'assets/css/beetle-pro.css', array(), BEETLE_PRO_VERSION );
+		}
 
 		// Get Custom CSS.
 		$custom_css = apply_filters( 'beetle_pro_custom_css_stylesheet', '' );
