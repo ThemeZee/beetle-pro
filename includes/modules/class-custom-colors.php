@@ -119,7 +119,7 @@ class Beetle_Pro_Custom_Colors {
 				.more-link,
 				.entry-tags .meta-tags a,
 				.widget_tag_cloud .tagcloud a,
-				.post-pagination .current,
+				.pagination .current,
 				.infinite-scroll #infinite-handle span,
 				.tzwb-social-icons .social-icons-menu li a {
 				    color: #fff;
@@ -212,8 +212,8 @@ class Beetle_Pro_Custom_Colors {
 				.widget_tag_cloud .tagcloud a:hover,
 				.widget_tag_cloud .tagcloud a:focus,
 				.widget_tag_cloud .tagcloud a:active,
-				.post-pagination a:link,
-				.post-pagination a:visited,
+				.pagination a:link,
+				.pagination a:visited,
 				.infinite-scroll #infinite-handle span:hover,
 				.infinite-scroll #infinite-handle span:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a,
@@ -225,8 +225,8 @@ class Beetle_Pro_Custom_Colors {
 					background: '. $theme_options['content_secondary_color'] .';
 				}
 
-				.post-pagination a:hover,
-				.post-pagination a:active,
+				.pagination a:hover,
+				.pagination a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
@@ -248,8 +248,8 @@ class Beetle_Pro_Custom_Colors {
 					color: '. $theme_options['content_primary_color'] .';
 				}
 
-				.post-pagination a:hover,
-				.post-pagination a:active,
+				.pagination a:hover,
+				.pagination a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
