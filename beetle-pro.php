@@ -225,7 +225,7 @@ class Beetle_Pro {
 
 		if ( $options->get( 'license_key' ) <> '' ) :
 
-			$license_key = $options->get( 'license_key' );
+			$license_key = trim( $options->get( 'license_key' ) );
 
 			// Setup the updater.
 			$beetle_pro_updater = new Beetle_Pro_Plugin_Updater( BEETLE_PRO_STORE_API_URL, __FILE__, array(
