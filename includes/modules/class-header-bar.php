@@ -40,6 +40,8 @@ class Beetle_Pro_Header_Bar {
 	 */
 	static function display_header_bar() {
 
+		echo '<div id="header-top" class="header-bar-wrap">';
+
 		echo '<div id="header-bar" class="header-bar clearfix">';
 
 		// Check if there is a social menu.
@@ -84,7 +86,7 @@ class Beetle_Pro_Header_Bar {
 		}
 
 		echo '</div>';
-
+		echo '</div>';
 	}
 
 	/**
