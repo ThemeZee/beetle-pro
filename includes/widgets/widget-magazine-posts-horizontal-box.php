@@ -21,10 +21,10 @@ class Beetle_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 		// Setup Widget.
 		parent::__construct(
 			'beetle-magazine-posts-boxed', // ID.
-			esc_html__( 'Magazine (Horizontal Box)', 'beetle' ), // Name.
+			esc_html__( 'Magazine (Horizontal Box)', 'beetle-pro' ), // Name.
 			array(
 				'classname' => 'beetle-magazine-horizontal-box-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category in a horizontal box. Please use this widget ONLY in the Magazine Homepage widget area.', 'beetle' ),
+				'description' => esc_html__( 'Displays your posts from a selected category in a horizontal box. Please use this widget ONLY in the Magazine Homepage widget area.', 'beetle-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -159,7 +159,7 @@ class Beetle_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 			if ( $settings['category'] > 0 ) :
 
 				// Set Link URL and Title for Category.
-				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'beetle' ), get_cat_name( $settings['category'] ) );
+				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'beetle-pro' ), get_cat_name( $settings['category'] ) );
 				$link_url = esc_url( get_category_link( $settings['category'] ) );
 
 				// Display Widget Title with link to category archive.
@@ -207,16 +207,16 @@ class Beetle_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 		?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'beetle' ); ?>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'beetle-pro' ); ?>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $settings['title'] ); ?>" />
 			</label>
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php esc_html_e( 'Category:', 'beetle' ); ?></label><br/>
+			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php esc_html_e( 'Category:', 'beetle-pro' ); ?></label><br/>
 			<?php // Display Category Select.
 				$args = array(
-					'show_option_all'    => esc_html__( 'All Categories', 'beetle' ),
+					'show_option_all'    => esc_html__( 'All Categories', 'beetle-pro' ),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
 					'selected'           => $settings['category'],
@@ -230,13 +230,3 @@ class Beetle_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 		<?php
 	}
 }
-
-/**
- * Register Widget
- */
-function beetle_register_magazine_posts_horizontal_box_widget() {
-
-	register_widget( 'Beetle_Pro_Magazine_Horizontal_Box_Widget' );
-
-}
-add_action( 'widgets_init', 'beetle_register_magazine_posts_horizontal_box_widget' );
