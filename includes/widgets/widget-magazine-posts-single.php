@@ -1,8 +1,8 @@
 <?php
 /**
- * Magazine Posts Single Widget
+ * Magazine Single Widget
  *
- * Display the latest posts from a selected category in a single layout.
+ * Displays a single post from a selected category.
  * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
  *
  * @package Beetle
@@ -21,19 +21,13 @@ class Beetle_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		// Setup Widget.
 		parent::__construct(
 			'beetle-magazine-posts-single', // ID.
-			sprintf( esc_html__( 'Magazine Posts: Single (%s)', 'beetle-pro' ), 'Beetle Pro' ), // Name.
+			esc_html__( 'Magazine (Single Post)', 'beetle-pro' ), // Name.
 			array(
-				'classname' => 'beetle_magazine_posts_single',
+				'classname' => 'beetle-magazine-single-widget',
 				'description' => esc_html__( 'Displays a single post from a selected category. Please use this widget ONLY in the Magazine Homepage widget area.', 'beetle-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
-
-		// Delete Widget Cache on certain actions.
-		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
-		add_action( 'deleted_post', array( $this, 'delete_widget_cache' ) );
-		add_action( 'switch_theme', array( $this, 'delete_widget_cache' ) );
-
 	}
 
 	/**
@@ -42,15 +36,11 @@ class Beetle_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'title'				=> '',
-			'category'			=> 0,
-			'meta_date'			=> true,
-			'meta_author'		=> true,
-			'meta_category'		=> true,
+			'title'	   => '',
+			'category' => 0,
 		);
 
 		return $defaults;
-
 	}
 
 	/**
@@ -63,22 +53,6 @@ class Beetle_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 	 */
 	function widget( $args, $instance ) {
 
-		$cache = array();
-
-		// Get Widget Object Cache.
-		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_beetle_magazine_posts_single', 'widget' );
-		}
-		if ( ! is_array( $cache ) ) {
-			$cache = array();
-		}
-
-		// Display Widget from Cache if exists.
-		if ( isset( $cache[ $this->id ] ) ) {
-			echo $cache[ $this->id ];
-			return;
-		}
-
 		// Start Output Buffering.
 		ob_start();
 
@@ -88,6 +62,7 @@ class Beetle_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		// Output.
 		echo $args['before_widget'];
 		?>
+
 		<div class="widget-magazine-posts-single widget-magazine-posts clearfix">
 
 			<?php // Display Title.
@@ -104,14 +79,8 @@ class Beetle_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		<?php
 		echo $args['after_widget'];
 
-		// Set Cache.
-		if ( ! $this->is_preview() ) {
-			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_beetle_magazine_posts_single', $cache, 'widget' );
-		} else {
-			ob_end_flush();
-		}
-
+		// End Output Buffering.
+		ob_end_flush();
 	}
 
 	/**
@@ -126,14 +95,15 @@ class Beetle_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 	 */
 	function render( $settings ) {
 
-		// Get latest posts from database.
+		// Get cached post id.
+		$post_id = beetle_get_magazine_post_ids( $this->id, $settings['category'], 1 );
+
+		// Fetch posts from database.
 		$query_arguments = array(
-			'posts_per_page' => 1,
-			'ignore_sticky_posts' => true,
-			'cat' => (int) $settings['category'],
+			'post__in'            => $post_id,
+			'no_found_rows'       => true,
 		);
 		$posts_query = new WP_Query( $query_arguments );
-		$i = 0;
 
 		// Check if there are posts.
 		if ( $posts_query->have_posts() ) :
@@ -142,32 +112,10 @@ class Beetle_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 			add_filter( 'excerpt_length', 'beetle_magazine_posts_excerpt_length' );
 
 			// Display Posts.
-			while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
+			while ( $posts_query->have_posts() ) : $posts_query->the_post();
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				get_template_part( 'template-parts/widgets/magazine-full-post', 'single' );
 
-					<a href="<?php esc_url( the_permalink() ); ?>" rel="bookmark">
-						<?php the_post_thumbnail(); ?>
-					</a>
-
-					<header class="entry-header">
-
-						<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-
-						<?php $this->entry_meta( $settings ); ?>
-
-					</header><!-- .entry-header -->
-
-					<div class="entry-content clearfix">
-
-						<?php the_excerpt(); ?>
-						<?php beetle_more_link(); ?>
-
-					</div><!-- .entry-content -->
-
-				</article>
-
-			<?php
 			endwhile;
 
 			// Remove excerpt filter.
@@ -177,44 +125,7 @@ class Beetle_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 
 		// Reset Postdata.
 		wp_reset_postdata();
-
 	}
-
-	/**
-	 * Displays Entry Meta of Posts
-	 *
-	 * @param array $settings / Settings for this widget instance.
-	 */
-	function entry_meta( $settings ) {
-
-		$postmeta = '';
-
-		if ( true === $settings['meta_date'] ) {
-
-			$postmeta .= beetle_meta_date();
-
-		}
-
-		if ( true === $settings['meta_author'] ) {
-
-			$postmeta .= beetle_meta_author();
-
-		}
-
-		if ( true === $settings['meta_category'] ) {
-
-			$postmeta .= beetle_meta_category();
-
-		}
-
-		if ( $postmeta ) {
-
-			echo '<div class="entry-meta">' . $postmeta . '</div>';
-
-		}
-
-	} // entry_meta()
-
 
 	/**
 	 * Displays Widget Title
@@ -238,7 +149,7 @@ class Beetle_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 
 				// Display Widget Title with link to category archive.
 				echo '<div class="widget-header">';
-				echo '<h1 class="widget-title"><a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a></h1>';
+				echo '<h3 class="widget-title"><a class="category-archive-link" href="' . $link_url . '" title="' . $link_title . '">' . $widget_title . '</a></h3>';
 				echo '</div>';
 
 			else :
@@ -250,8 +161,7 @@ class Beetle_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 
 		endif;
 
-	} // widget_title()
-
+	}
 
 	/**
 	 * Update Widget Settings
@@ -265,11 +175,8 @@ class Beetle_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = sanitize_text_field( $new_instance['title'] );
 		$instance['category'] = (int) $new_instance['category'];
-		$instance['meta_date'] = ! empty( $new_instance['meta_date'] );
-		$instance['meta_author'] = ! empty( $new_instance['meta_author'] );
-		$instance['meta_category'] = ! empty( $new_instance['meta_category'] );
 
-		$this->delete_widget_cache();
+		beetle_flush_magazine_post_ids();
 
 		return $instance;
 	}
@@ -287,7 +194,7 @@ class Beetle_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'beetle-pro' ); ?>
-				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $settings['title']; ?>" />
+				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $settings['title'] ); ?>" />
 			</label>
 		</p>
 
@@ -306,37 +213,6 @@ class Beetle_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 			?>
 		</p>
 
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_date' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_date'] ); ?> id="<?php echo $this->get_field_id( 'meta_date' ); ?>" name="<?php echo $this->get_field_name( 'meta_date' ); ?>" />
-				<?php esc_html_e( 'Display post date', 'beetle-pro' ); ?>
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_author' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_author'] ); ?> id="<?php echo $this->get_field_id( 'meta_author' ); ?>" name="<?php echo $this->get_field_name( 'meta_author' ); ?>" />
-				<?php esc_html_e( 'Display post author', 'beetle-pro' ); ?>
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_category' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_category'] ); ?> id="<?php echo $this->get_field_id( 'meta_category' ); ?>" name="<?php echo $this->get_field_name( 'meta_category' ); ?>" />
-				<?php esc_html_e( 'Display post category', 'beetle-pro' ); ?>
-			</label>
-		</p>
-
-	<?php
-	} // form()
-
-
-	/**
-	 * Delete Widget Cache
-	 */
-	public function delete_widget_cache() {
-
-		wp_cache_delete( 'widget_beetle_magazine_posts_single', 'widget' );
-
+		<?php
 	}
 }
