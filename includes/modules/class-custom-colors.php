@@ -57,7 +57,7 @@ class Beetle_Pro_Custom_Colors {
 				/* Top Navigation Color Setting */
 				.header-bar-wrap,
 				.top-navigation-menu ul {
-					background: '. $theme_options['top_navi_color'] .';
+					background: ' . $theme_options['top_navi_color'] . ';
 				}
 				';
 
@@ -70,7 +70,7 @@ class Beetle_Pro_Custom_Colors {
 				/* Primary Navigation Color Setting */
 				.main-navigation-menu ul,
 				.main-navigation-menu li.current-menu-item > a {
-					background: '. $theme_options['navi_primary_color'] .';
+					background: ' . $theme_options['navi_primary_color'] . ';
 				}
 				';
 
@@ -84,7 +84,7 @@ class Beetle_Pro_Custom_Colors {
 				/* Secondary Navigation Color Setting */
 				.primary-navigation,
 				.main-navigation-toggle {
-					background: '. $theme_options['navi_secondary_color'] .';
+					background: ' . $theme_options['navi_secondary_color'] . ';
 				}
 				';
 
@@ -101,7 +101,7 @@ class Beetle_Pro_Custom_Colors {
 				.site-title,
 				.site-title a:link,
 				.site-title a:visited {
-					color: '. $theme_options['content_primary_color'] .';
+					color: ' . $theme_options['content_primary_color'] . ';
 				}
 
 				a:hover,
@@ -123,7 +123,7 @@ class Beetle_Pro_Custom_Colors {
 				.infinite-scroll #infinite-handle span,
 				.tzwb-social-icons .social-icons-menu li a {
 				    color: #fff;
-					background: '. $theme_options['content_primary_color'] .';
+					background: ' . $theme_options['content_primary_color'] . ';
 				}
 
 				button:hover,
@@ -176,7 +176,7 @@ class Beetle_Pro_Custom_Colors {
 				.widget-title a:link,
 				.widget-title a:visited,
 				.page-header .archive-title {
-					color: '. $theme_options['content_secondary_color'] .';
+					color: ' . $theme_options['content_secondary_color'] . ';
 				}
 
 				.entry-title a:hover,
@@ -188,7 +188,7 @@ class Beetle_Pro_Custom_Colors {
 
 				.widget-header,
 				.page-header {
-					border-bottom: 4px solid '. $theme_options['content_secondary_color'] .';
+					border-bottom: 4px solid ' . $theme_options['content_secondary_color'] . ';
 				}
 
 				button:hover,
@@ -222,7 +222,7 @@ class Beetle_Pro_Custom_Colors {
 				.tzwb-social-icons .social-icons-menu li a:hover,
 				.tzwb-social-icons .social-icons-menu li a:focus,
 				.tzwb-social-icons .social-icons-menu li a:active {
-					background: '. $theme_options['content_secondary_color'] .';
+					background: ' . $theme_options['content_secondary_color'] . ';
 				}
 
 				.pagination a:hover,
@@ -245,7 +245,7 @@ class Beetle_Pro_Custom_Colors {
 				.entry-title a:active,
 				.widget-title a:hover,
 				.widget-title a:active {
-					color: '. $theme_options['content_primary_color'] .';
+					color: ' . $theme_options['content_primary_color'] . ';
 				}
 
 				.pagination a:hover,
@@ -253,7 +253,7 @@ class Beetle_Pro_Custom_Colors {
 				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-					background: '. $theme_options['content_primary_color'] .';
+					background: ' . $theme_options['content_primary_color'] . ';
 				}
 				';
 
@@ -265,11 +265,11 @@ class Beetle_Pro_Custom_Colors {
 			$custom_css .= '
 				/* Slider Color Setting */
 				.post-slider-controls .zeeflex-direction-nav a {
-					background: '. $theme_options['slider_color'] .';
+					background: ' . $theme_options['slider_color'] . ';
 				}
 
 				.post-slider .zeeslide .slide-post {
-					border-color: '. $theme_options['slider_color'] .';
+					border-color: ' . $theme_options['slider_color'] . ';
 				}
 				';
 
@@ -283,7 +283,7 @@ class Beetle_Pro_Custom_Colors {
 				/* Footer Area Color Setting */
 				.footer-wrap,
 				.footer-widgets-background {
-					background: '. $theme_options['footer_area_color'] .';
+					background: ' . $theme_options['footer_area_color'] . ';
 				}
 				';
 
@@ -296,7 +296,7 @@ class Beetle_Pro_Custom_Colors {
 
 				/* Footer Navigation Color Setting */
 				.footer-navigation {
-					background: '. $theme_options['footer_navi_color'] .';
+					background: ' . $theme_options['footer_navi_color'] . ';
 				}
 				';
 
