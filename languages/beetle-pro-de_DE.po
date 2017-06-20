@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Beetle Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2017-03-17 16:53+0100\n"
-"PO-Revision-Date: 2017-03-17 16:53+0100\n"
+"POT-Creation-Date: 2017-06-20 16:27+0200\n"
+"PO-Revision-Date: 2017-06-20 16:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -16,11 +16,11 @@ msgstr ""
 "X-Generator: Poedit 1.8.12\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: beetle-pro.php:209
+#: beetle-pro.php:210
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: includes/admin/class-admin-notices.php:55
+#: includes/admin/class-admin-notices.php:52
 #, php-format
 msgid ""
 "Please enter your license key for the %1$s add-on in order to receive "
@@ -30,13 +30,12 @@ msgstr ""
 "Updates und Support zu erhalten. <a href=\"%2$s\">Lizenzschlüssel eingeben</"
 "a>"
 
-#: includes/admin/class-admin-notices.php:60
-#: includes/admin/class-admin-notices.php:89
-#: includes/admin/class-admin-notices.php:114
+#: includes/admin/class-admin-notices.php:57
+#: includes/admin/class-admin-notices.php:86
 msgid "Dismiss Notice"
 msgstr "Nachricht verbergen"
 
-#: includes/admin/class-admin-notices.php:84
+#: includes/admin/class-admin-notices.php:81
 #, php-format
 msgid ""
 "Your license for %1$s has expired. Please <a href=\"%2$s\">renew</a> to "
@@ -45,21 +44,11 @@ msgstr ""
 "Deine Lizenz für %1$s  ist abgelaufen. Bitte <a href=\"%2$s\">erneuere "
 "diese</a>, um weiterhin Updates und Support zu erhalten!"
 
-#: includes/admin/class-admin-notices.php:110
-#, php-format
-msgid ""
-"The %1$s add-on needs the %2$s theme activated in order to work. You should "
-"deactivate %1$s if you have switched to another theme permanently."
-msgstr ""
-"Das %1$s Add-on benötigt ein aktives %2$s Theme für die korrekte "
-"Funktionsweise. Du solltest %1$s deaktivieren, wenn du dauerhaft zu einem "
-"anderen Theme gewechselt hast."
-
-#: includes/admin/class-admin-notices.php:137
+#: includes/admin/class-admin-notices.php:108
 msgid "Security check failed"
 msgstr "Sicherheitscheck fehlgeschlagen"
 
-#: includes/admin/class-admin-notices.php:137
+#: includes/admin/class-admin-notices.php:108
 #: includes/admin/class-plugin-updater.php:395
 msgid "Error"
 msgstr "Fehler"
@@ -349,6 +338,14 @@ msgstr "Logo Abstand (Standard: 0)"
 msgid "Header Spacing (default: 20)"
 msgstr "Header Abstand (Standard: 20)"
 
+#: includes/modules/class-scroll-to-top.php:65
+msgid "Scroll to Top"
+msgstr ""
+
+#: includes/modules/class-scroll-to-top.php:81
+msgid "Display Scroll to Top Button"
+msgstr ""
+
 #: includes/widgets/widget-magazine-posts-horizontal-box.php:24
 msgid "Magazine (Horizontal Box)"
 msgstr "Magazin (Horizontale Box)"
@@ -361,24 +358,24 @@ msgstr ""
 "Zeigt die Beiträge einer gewählten Kategorie in einer horizontalen Box. "
 "Bitte verwende dieses Widget NUR in dem Magazin Startseite Widgetbereich."
 
-#: includes/widgets/widget-magazine-posts-horizontal-box.php:205
-#: includes/widgets/widget-magazine-posts-list.php:192
-#: includes/widgets/widget-magazine-posts-single.php:190
-#: includes/widgets/widget-magazine-posts-vertical-box.php:205
+#: includes/widgets/widget-magazine-posts-horizontal-box.php:207
+#: includes/widgets/widget-magazine-posts-list.php:194
+#: includes/widgets/widget-magazine-posts-single.php:192
+#: includes/widgets/widget-magazine-posts-vertical-box.php:207
 msgid "Title:"
 msgstr "Titel:"
 
-#: includes/widgets/widget-magazine-posts-horizontal-box.php:211
-#: includes/widgets/widget-magazine-posts-list.php:198
-#: includes/widgets/widget-magazine-posts-single.php:196
-#: includes/widgets/widget-magazine-posts-vertical-box.php:211
+#: includes/widgets/widget-magazine-posts-horizontal-box.php:213
+#: includes/widgets/widget-magazine-posts-list.php:200
+#: includes/widgets/widget-magazine-posts-single.php:198
+#: includes/widgets/widget-magazine-posts-vertical-box.php:213
 msgid "Category:"
 msgstr "Kategorie:"
 
-#: includes/widgets/widget-magazine-posts-horizontal-box.php:214
-#: includes/widgets/widget-magazine-posts-list.php:201
-#: includes/widgets/widget-magazine-posts-single.php:199
-#: includes/widgets/widget-magazine-posts-vertical-box.php:214
+#: includes/widgets/widget-magazine-posts-horizontal-box.php:216
+#: includes/widgets/widget-magazine-posts-list.php:203
+#: includes/widgets/widget-magazine-posts-single.php:201
+#: includes/widgets/widget-magazine-posts-vertical-box.php:216
 msgid "All Categories"
 msgstr "Alle Kategorien"
 
@@ -394,7 +391,7 @@ msgstr ""
 "Zeigt die Beiträge einer gewählten Kategorie in einer Liste. Bitte verwende "
 "dieses Widget NUR in dem Magazin Startseite Widgetbereich."
 
-#: includes/widgets/widget-magazine-posts-list.php:213
+#: includes/widgets/widget-magazine-posts-list.php:215
 msgid "Number of posts:"
 msgstr "Anzahl der Beiträge:"
 
@@ -430,6 +427,14 @@ msgstr ""
 
 #~ msgid "Full-width Page"
 #~ msgstr "Volle Breite (Fullwidth)"
+
+#~ msgid ""
+#~ "The %1$s add-on needs the %2$s theme activated in order to work. You "
+#~ "should deactivate %1$s if you have switched to another theme permanently."
+#~ msgstr ""
+#~ "Das %1$s Add-on benötigt ein aktives %2$s Theme für die korrekte "
+#~ "Funktionsweise. Du solltest %1$s deaktivieren, wenn du dauerhaft zu einem "
+#~ "anderen Theme gewechselt hast."
 
 #~ msgctxt "color setting"
 #~ msgid "Header"
