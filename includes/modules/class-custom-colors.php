@@ -121,7 +121,10 @@ class Beetle_Pro_Custom_Colors {
 				.widget_tag_cloud .tagcloud a,
 				.pagination .current,
 				.infinite-scroll #infinite-handle span,
-				.tzwb-social-icons .social-icons-menu li a {
+				.tzwb-social-icons .social-icons-menu li a,
+				.scroll-to-top-button,
+				.scroll-to-top-button:focus,
+				.scroll-to-top-button:active {
 				    color: #fff;
 					background: ' . $theme_options['content_primary_color'] . ';
 				}
@@ -221,7 +224,8 @@ class Beetle_Pro_Custom_Colors {
 				.tzwb-tabbed-content .tzwb-tabnavi li a:visited,
 				.tzwb-social-icons .social-icons-menu li a:hover,
 				.tzwb-social-icons .social-icons-menu li a:focus,
-				.tzwb-social-icons .social-icons-menu li a:active {
+				.tzwb-social-icons .social-icons-menu li a:active,
+				.scroll-to-top-button:hover {
 					background: ' . $theme_options['content_secondary_color'] . ';
 				}
 
