@@ -56,7 +56,7 @@ class Beetle_Pro_Footer_Line {
 
 			echo '<nav id="footer-navigation" class="footer-navigation navigation clearfix" role="navigation">';
 
-			echo '<span class="today">' . date( get_option( 'date_format' ) . ' / ' . get_option( 'time_format' ) ) . '</span>';
+			echo '<span class="today">' . current_time( get_option( 'date_format' ) . ' / ' . get_option( 'time_format' ) ) . '</span>';
 
 			wp_nav_menu( array(
 				'theme_location' => 'footer',
