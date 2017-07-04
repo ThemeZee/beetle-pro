@@ -24,7 +24,7 @@ class Beetle_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 			esc_html__( 'Magazine (List)', 'beetle-pro' ), // Name.
 			array(
 				'classname' => 'beetle-magazine-list-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category in a simple list layout.', 'beetle-pro' ),
+				'description' => esc_html__( 'Displays your posts from a selected category in a list layout.', 'beetle-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
