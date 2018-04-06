@@ -76,7 +76,6 @@ class Beetle_Pro_Customizer {
 			'title_font'              => 'Open Sans',
 			'navi_font'               => 'Open Sans',
 			'widget_title_font'       => 'Open Sans',
-			'available_fonts'         => 'favorites',
 		);
 
 		return $default_options;
