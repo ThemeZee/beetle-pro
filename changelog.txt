@@ -2,6 +2,10 @@
 Beetle Pro Changelog
 ===================================
 
+Version 1.5.2
+-----------------------------------
+* added font display swap to Google Fonts
+
 Version 1.5.1
 -----------------------------------
 * display Scroll-to-Top button on all screen sizes
